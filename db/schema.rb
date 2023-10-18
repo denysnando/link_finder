@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_18_171415) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_18_194825) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "scrape_links", force: :cascade do |t|
+    t.bigint "scrape_id"
+    t.string "name"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scrape_id"], name: "index_scrape_links_on_scrape_id"
+  end
+
+  create_table "scrapes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.string "link"
+    t.integer "link_counter", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_scrapes_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
