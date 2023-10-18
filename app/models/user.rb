@@ -9,4 +9,6 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true, format: { with: VALID_USERNAME_REGEX }
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   validates :password, presence: true
+
+  has_secure_password
 end
