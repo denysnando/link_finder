@@ -3,8 +3,8 @@ class CreateScrape < ActiveRecord::Migration[7.1]
     create_table :scrapes do |t|
       t.references :user
       t.string :name
-      t.string :link
-      t.integer :link_counter, default: 0
+      t.string :url
+      t.integer :url_counter, default: 0
 
       t.timestamps
     end

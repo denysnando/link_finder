@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_18_194825) do
   create_table "scrape_links", force: :cascade do |t|
     t.bigint "scrape_id"
     t.string "name"
-    t.string "link"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["scrape_id"], name: "index_scrape_links_on_scrape_id"
@@ -26,8 +26,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_18_194825) do
   create_table "scrapes", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
-    t.string "link"
-    t.integer "link_counter", default: 0
+    t.string "url"
+    t.integer "url_counter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_scrapes_on_user_id"

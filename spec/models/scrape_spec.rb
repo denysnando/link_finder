@@ -2,8 +2,9 @@
 
 require 'rails_helper'
 
-RSpec.describe Scrape, type: :model do
+RSpec.describe Scrape do
   let(:user) { create(:user) }
+  let(:scrape) { create(:scrape) }
 
   describe 'associations' do
     it { is_expected.to belong_to(:user) }
@@ -11,22 +12,24 @@ RSpec.describe Scrape, type: :model do
   end
 
   describe 'validations' do
-    it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_presence_of(:link) }
+    it { is_expected.to validate_presence_of(:url) }
+  end
 
-    it 'is valid with valid attributes' do
-      scrape = build(:scrape, user:)
-      expect(scrape).to be_valid
+  describe 'callbacks' do
+    it 'calls process_links after creation' do
+      allow(LinkChecker).to receive(:call)
+
+      expect(LinkChecker).to have_received(:call).with(scrape:)
+
+      scrape.save
     end
+  end
 
-    it 'is not valid without a name' do
-      scrape = build(:scrape, name: nil, user:)
-      expect(scrape).not_to be_valid
-    end
+  describe '#process_links' do
+    it 'calls LinkChecker' do
+      allow(LinkChecker).to receive(:call)
 
-    it 'is not valid without a link' do
-      scrape = build(:scrape, link: nil, user:)
-      expect(scrape).not_to be_valid
+      expect(LinkChecker).to have_received(:call).with(scrape:)
     end
   end
 end

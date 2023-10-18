@@ -5,5 +5,5 @@ class ScrapeLink < ApplicationRecord
   belongs_to :scrape
 
   # Validations
-  validates :name, :link, presence: true
+  validates :name, :url, presence: true
 end

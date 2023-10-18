@@ -3,7 +3,6 @@
 FactoryBot.define do
   factory :scrape do
     user
-    name { Faker::Lorem.word }
-    link { Faker::Internet.url }
+    url { 'https://www.google.com.br' }
   end
 end

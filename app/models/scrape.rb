@@ -6,5 +6,12 @@ class Scrape < ApplicationRecord
   has_many :scrape_links, dependent: :destroy
 
   # Validations
-  validates :name, :link, presence: true
+  validates :url, presence: true
+
+  # Callbacks
+  after_create :process_links
+
+  def process_links
+    LinkChecker.call(scrape: self)
+  end
 end

@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :scrape_link do
     scrape
     name { Faker::Lorem.word }
-    link { Faker::Internet.url }
+    url { Faker::Internet.url }
   end
 end
