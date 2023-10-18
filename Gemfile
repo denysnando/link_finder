@@ -7,6 +7,7 @@ ruby '3.1.2'
 gem 'bootsnap', require: false
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'open-uri'
 gem 'nokogiri', '~> 1.15', '>= 1.15.3'
 gem 'pg', '~> 1.3.4'
 gem 'puma', '>= 5.0'
