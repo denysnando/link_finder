@@ -15,17 +15,29 @@ gem "jbuilder"
 gem "redis", ">= 4.0.1"
 gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 gem "bootsnap", require: false
+gem 'nokogiri', '~> 1.15', '>= 1.15.3'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 6.0.0'
 end
 
 group :development do
-  gem "web-console"
-  gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'solargraph'
 end
 
 group :test do
-  gem "capybara"
-  gem "selenium-webdriver"
+  gem 'database_cleaner'
+  gem 'rspec-sidekiq'
+  gem 'vcr', '~> 6.1.0'
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'simplecov'
+  gem 'webmock', '~> 3.9.1'
 end
