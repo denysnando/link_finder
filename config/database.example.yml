@@ -1,0 +1,21 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: link_finder_dev
+  pool: 5
+  username: postgres
+  password: postgres
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: link_finder_test
+  pool: 5
+  username: postgres
+  password: postgres
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: link_finder_prod
+  pool: 5
+  username: test-postgres
+  password: postgres
