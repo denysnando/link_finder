@@ -1,24 +1,51 @@
-# README
+# link scraper and finder
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project demonstrates a text-based command system to generate a history quake_log implemented in Ruby. It includes two classes, `Base` and `Main`, within the `Repl` module, which allow users to select and execute commands from a menu of options.
 
-Things you may want to cover:
+## Table of Contents
 
-* Ruby version
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Tests](#Tests)
 
-* System dependencies
+## Requirements
 
-* Configuration
+Before running the project, make sure you have the following:
 
-* Database creation
+- Ruby installed (version 3.1.2).
+- Rails installed (version 7.1.1).
+- Postgresql installed (version 1.3.4).
 
-* Database initialization
+## Installation
 
-* How to run the test suite
+1. Clone this repository to your local machine:
 
-* Services (job queues, cache servers, search engines, etc.)
+   ```bash
+     git clone https://github.com/denysnando/link_finder
+   ```
+2. Setup
+   ```bash
+     cd link_finder/
+     bundle
+     bundle exec rake db:create
+     bundle exec rake db:migrate
+   ```
 
-* Deployment instructions
+## Usage
+  ```bash
+    bundle exec rails s
+  ```
 
-* ...
+## Tests
+  ```bash
+    rspec
+  ```
+
+To run coverate:
+```bash
+    coverage=on rspec
+  ```
+
+## How can it be improved?
+- Add docker;
