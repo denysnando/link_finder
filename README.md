@@ -70,3 +70,4 @@ To run coverage:
 
 ## How can it be improved?
 - Add docker;
+- Add cache for preview performance
