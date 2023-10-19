@@ -8,6 +8,10 @@
   margin: 5px 10px 5px 0;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .form-inline input {
   vertical-align: middle;
   margin: 5px 10px 5px 0;
