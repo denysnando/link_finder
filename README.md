@@ -1,6 +1,12 @@
-# link scraper and finder
+# Link scraper and finder
 
-This project demonstrates a text-based command system to generate a history quake_log implemented in Ruby. It includes two classes, `Base` and `Main`, within the `Repl` module, which allow users to select and execute commands from a menu of options.
+This project has the idea of receiving a URL and finding all possible urls that are present in it:
+
+
+<div>
+  <img src="https://github.com/denysnando/link_finder/assets/3411874/fea6ae14-0fb4-4e2d-8aec-1d64096ae296" alt="Imagem 1" style="width: 500px; height: 300px;">
+  <img src="https://github.com/denysnando/link_finder/assets/3411874/cc23171f-61e0-4aea-8a12-eb2aa2f6ab10" alt="Imagem 2" style="width: 500px; height: 300px;">
+</div>
 
 ## Table of Contents
 
@@ -8,6 +14,7 @@ This project demonstrates a text-based command system to generate a history quak
 - [Installation](#installation)
 - [Usage](#usage)
 - [Tests](#Tests)
+- [Notes](#Notes)
 
 ## Requirements
 
@@ -34,18 +41,32 @@ Before running the project, make sure you have the following:
 
 ## Usage
   ```bash
-    bundle exec rails s
+  bundle exec rails s
   ```
 
 ## Tests
-  ```bash
-    rspec
-  ```
+   ```bash
+     rspec
+   ```
 
-To run coverate:
+To run coverage:
 ```bash
-    coverage=on rspec
-  ```
+  coverage=on rspec
+```
+
+ 
+
+![Captura de Tela 2023-10-19 às 09 20 25](https://github.com/denysnando/link_finder/assets/3411874/ebbe39f7-c319-4f52-8856-e39da6c04e81)
+
+## Notes
+   ### Gems used:
+
+   - nokogiri;
+   - open-uri;
+   - sidekiq;
+   - bcrypt;
+   - will_paginate;
+
 
 ## How can it be improved?
 - Add docker;
