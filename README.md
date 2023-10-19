@@ -5,8 +5,9 @@ This project has the idea of receiving a URL and finding all possible urls that 
 
 <div>
   <img src="https://github.com/denysnando/link_finder/assets/3411874/fea6ae14-0fb4-4e2d-8aec-1d64096ae296" alt="Imagem 1" style="width: 500px; height: 300px;">
-  <img src="https://github.com/denysnando/link_finder/assets/3411874/cc23171f-61e0-4aea-8a12-eb2aa2f6ab10" alt="Imagem 2" style="width: 500px; height: 300px;">
+  <img src="https://github.com/denysnando/link_finder/assets/3411874/46e1e1a9-7433-4c0f-9f49-509c70718121" alt="Imagem 2" style="width: 500px; height: 300px;">
 </div>
+
 
 ## Table of Contents
 
