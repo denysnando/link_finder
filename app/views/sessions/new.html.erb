@@ -1,0 +1,21 @@
+<html>
+  <body class="login">
+    <div class="login-container">
+      <h2>Login</h2>
+      <div class="form">
+        <%= form_with(model: User.new, url: login_path) do |form| %>
+          <label for="email">Email</label>
+          <%= form.email_field :email, id: "email", placeholder: "Enter your email" %>
+
+          <label for="password">Password</label>
+          <%= form.password_field :password, id: "password", placeholder: "Enter your password" %>
+
+          <%= form.submit 'Login' %>
+          <div class="new">
+            <%= link_to 'New User', new_user_path, class: 'button-new' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

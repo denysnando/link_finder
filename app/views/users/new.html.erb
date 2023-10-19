@@ -1,0 +1,25 @@
+<html>
+  <body class="login">
+    <div class="login-container">
+      <h2>Create new user</h2>
+      <div class="form">
+        <%= form_for(@user) do |f| %>
+        <label for="username">Username</label>
+          <%= f.text_field :username, id: "email", placeholder: "Enter your Username" %>
+
+          <label for="email">Email</label>
+          <%= f.email_field :email, id: "email", placeholder: "Enter your email" %>
+
+          <label for="password">Password</label>
+          <%= f.password_field :password, id: "password", placeholder: "Enter your password" %>
+
+          <%= f.submit 'Create' %>
+
+          <div class="new">
+            <%= link_to 'Back', login_path, class: 'button-new' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <div class="table-links">
+      <div class="content">
+        <div class="form-inline">
+          <%= form_tag(scrapes_path, method: :post, class: 'container') do %>
+            <%= text_field_tag 'url', nil, placeholder: 'Add new page' %>
+            <%= submit_tag 'Scrape', class: 'button' %>
+          <% end %>
+        </div>
+        <div class="form-box">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Total Links</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @scrapes.each do |scrape| %>
+                <tr>
+                  <td><%= display_scrape_name(scrape) %></td>
+                  <td><%= display_url_counter(scrape) %></td>
+                </tr>
+              <%end%>
+            </tbody>
+            <%= will_paginate @scrapes %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

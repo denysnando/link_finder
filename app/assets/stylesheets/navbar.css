@@ -1,0 +1,27 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-text {
+  margin-right: 15px;
+}
+
+.navbar-nav li {
+  margin-left: 10px;
+}
+
+.btn-logout {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 1px solid #007BFF;
+  color: #007BFF;
+}
+
+.btn-logout:hover {
+  background-color: #007BFF;
+  color: white;
+}

@@ -1,0 +1,31 @@
+<html>
+  <body>
+    <div class="table-links">
+      <div class="content">
+      <div class="back">
+        <%= link_to '< back', root_path %>
+      </div>
+
+        <div class="form-box">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Total Links</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @scrape_links.each do |scrape_link| %>
+                <tr>
+                  <td><%= scrape_link.name %></td>
+                  <td><%= scrape_link.url %></td>
+                </tr>
+              <%end%>
+            </tbody>
+          </table>
+        </div><br>
+        <%= will_paginate @scrape_links %>
+      </div>
+    </div>
+  </body>
+</html>

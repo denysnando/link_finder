@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <% if current_user.present? %>
+      <%= render 'layouts/navbar' %>
+    <% end %>
+    <%= render 'layouts/error' %>
     <%= yield %>
   </body>
 </html>

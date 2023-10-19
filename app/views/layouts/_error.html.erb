@@ -1,0 +1,11 @@
+<% if flash[:alert].present? %>
+  <div class="error-message-container">
+      <div class="error-message">
+        <ul>
+          <% Array(flash[:alert]).each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+  </div>
+<% end %>
