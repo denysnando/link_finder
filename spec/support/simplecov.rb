@@ -1,19 +1,21 @@
 # frozen_string_literal: true
-require "simplecov"
+
+require 'simplecov'
 require 'active_support/inflector'
 
-if ENV["COVERAGE"]
+if ENV['coverage']
   require 'simplecov'
 
   SimpleCov.start 'rails' do
     enable_coverage :branch
-    
+
     add_filter '/config/'
     add_filter '/factories/'
     add_filter '/features/'
     add_filter '/initializers/'
     add_filter '/spec/'
-    
+    add_filter '/helpers/'
+
     add_group 'Lib', 'lib'
 
     Dir['app/*'].each do |dir|
@@ -37,4 +39,3 @@ if ENV["COVERAGE"]
     end
   end
 end
-
