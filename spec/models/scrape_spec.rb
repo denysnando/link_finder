@@ -16,20 +16,8 @@ RSpec.describe Scrape do
   end
 
   describe 'callbacks' do
-    it 'calls process_links after creation' do
-      allow(LinkChecker).to receive(:call)
-
-      expect(LinkChecker).to have_received(:call).with(scrape:)
-
-      scrape.save
-    end
-  end
-
-  describe '#process_links' do
-    it 'calls LinkChecker' do
-      allow(LinkChecker).to receive(:call)
-
-      expect(LinkChecker).to have_received(:call).with(scrape:)
+    it 'queues LinkCheckerWorker after creation' do
+      expect { scrape.save }.to change(LinkCheckerWorker.jobs, :size).by(1)
     end
   end
 end

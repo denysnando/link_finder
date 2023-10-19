@@ -6,12 +6,12 @@ class Scrape < ApplicationRecord
   has_many :scrape_links, dependent: :destroy
 
   # Validations
-  validates :url, presence: true
+  validates :url, presence: true, format: { with: /\A#{URI::DEFAULT_PARSER.make_regexp}\z/ }
 
   # Callbacks
   after_create :process_links
 
   def process_links
-    LinkChecker.call(scrape: self)
+    LinkCheckerWorker.perform_async(id)
   end
 end

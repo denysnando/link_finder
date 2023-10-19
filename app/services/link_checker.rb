@@ -18,7 +18,10 @@ class LinkChecker
   attr_reader :scrape
 
   def scrape_links
-    page = Nokogiri::HTML(URI.open(scrape.url).read)
+    url = scrape.url
+    url = "https://#{url}" unless url.start_with?('http://', 'https://')
+
+    page = Nokogiri::HTML(URI.open(url).read)
 
     page_title = page.css('title').text
     links = extract_links(page)
@@ -27,9 +30,13 @@ class LinkChecker
   end
 
   def extract_links(page)
-    page.css('a').map do |link|
+    page.css('a').filter_map do |link|
       text = link.text.empty? ? link.css('img').to_s : link.text
-      { href: link['href'], text: }
+      href = link['href']
+
+      next if href.include?('javascript:void(0)')
+
+      { href:, text: }
     end
   end
 
